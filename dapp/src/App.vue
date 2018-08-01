@@ -1,16 +1,26 @@
 <script>
 import { mapGetters } from 'vuex';
+import MetaMask from 'MetaMask';
 export default {
+    components: {
+        MetaMask
+    },
     computed: {
         ...mapGetters([
             'routerState'
         ])
+    },
+    methods:{
+        onComplete(msg){
+            console.log('msg:', msg);
+        }
     }
 }
 </script>
 
 <template>
     <div id="app">
+        <meta-mask @onComplete="onComplete"></meta-mask>
         <img id="logo" src="~logo.png" alt="">
         <div class="menu_box">
             <router-link v-for="(item, i) in routerState" :to='item.url' :key='i'>

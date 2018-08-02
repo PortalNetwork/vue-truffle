@@ -1,9 +1,9 @@
 <script>
 import { mapGetters } from 'vuex';
-import MetaMask from 'MetaMask';
+import MetaMask from './components/MetaMask';
 export default {
     components: {
-        MetaMask
+        MetaMask,
     },
     computed: {
         ...mapGetters([
@@ -20,7 +20,11 @@ export default {
 
 <template>
     <div id="app">
-        <meta-mask @onComplete="onComplete"></meta-mask>
+        <meta-mask
+            userMessage="null"
+            @onComplete="onComplete">
+        </meta-mask>
+
         <img id="logo" src="~logo.png" alt="">
         <div class="menu_box">
             <router-link v-for="(item, i) in routerState" :to='item.url' :key='i'>

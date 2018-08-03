@@ -1,8 +1,15 @@
 {
+  "name": "vue-truffle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
   "scripts": {
     "start": "node server.js",
-    "dev": "NODE_ENV=development webpack-dev-server --mode development --open",
+    "dev": "NODE_ENV=development webpack-dev-server --mode development --open --hot",
     "deploy": "NODE_ENV=production webpack -p --mode production"
+  },
+  "dependencies": {
+    "zeppelin-solidity": "1.10.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.0.0",
@@ -16,6 +23,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.23.0",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
     "es6-object-assign": "^1.1.0",
@@ -37,6 +45,7 @@
     "postcss-loader": "^2.1.6",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
+    "truffle-hdwallet-provider": "0.0.6",
     "url-loader": "^1.0.1",
     "vue": "^2.5.16",
     "vue-html-loader": "^1.2.4",

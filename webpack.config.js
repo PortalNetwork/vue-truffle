@@ -7,7 +7,7 @@ function port(minNum, maxNum) {
 	return Math.floor( Math.random() * (maxNum - minNum + 1) ) + minNum;
 }
 const config = {
-    context: path.resolve(__dirname, 'src'),
+    context: path.resolve(__dirname, 'dapp'),
     entry: {
         index: 'index',
     },
@@ -57,9 +57,10 @@ const config = {
             vue: process.env.NODE_ENV === "development" ? 'vue/dist/vue.js' : 'vue/dist/vue.min.js'
         },
         modules: [
-            path.resolve('src'),
-            path.resolve('src/images'),
-            path.resolve('src/components'),
+            path.resolve('/'),
+            path.resolve('dapp'),
+            path.resolve('dapp/images'),
+            path.resolve('dapp/components'),
             path.resolve('node_modules')
         ],
         extensions: ['.js', '.vue']
@@ -72,13 +73,7 @@ const config = {
                     'vue-style-loader',
                     'css-loader',
                     'postcss-loader',
-                    {
-                        loader: 'sass-loader',
-                        'options':{
-                            // data: `@import "./src/scss/global/global.scss";`
-                        }
-                    }
-                    
+                    'sass-loader'
                 ]
             },
             {
@@ -91,7 +86,7 @@ const config = {
             },
             {
                 test: /\.(jpe?g|png|gif|ico)$/,
-                include: path.resolve('src/images'),
+                include: path.resolve('dapp/images'),
                 use:[
                     {
                         loader: 'url-loader',

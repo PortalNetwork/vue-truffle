@@ -12,7 +12,7 @@ const config = {
         index: 'index',
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'build'),
         filename: 'js/[name].js?[hash:8]',
         publicPath: process.env.NODE_ENV === "development" ? "/" : "./"
     },

@@ -1,5 +1,5 @@
-var SimpleStorage = artifacts.require("SimpleStorage");
+var HelloWorld = artifacts.require("../contracts/HelloWorld.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(SimpleStorage);
+  deployer.deploy(HelloWorld);
 };
